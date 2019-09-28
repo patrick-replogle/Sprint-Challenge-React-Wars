@@ -14,15 +14,16 @@ const App = () => {
   const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://swapi.co/api/people/")
-      .then(response => {
-        console.log(response);
-        setCharacters(response.data.results);
-      })
-      .catch(error => {
+    async function fetchData() {
+      try {
+        const fetchData = await axios.get("https://swapi.co/api/people/");
+        console.log(fetchData);
+        setCharacters(fetchData.data.results);
+      } catch (error) {
         console.log("error", error);
-      });
+      }
+    }
+    fetchData();
   }, []);
 
   return (
