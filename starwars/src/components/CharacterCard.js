@@ -3,11 +3,15 @@ import styled from "styled-components";
 
 const Card = styled.div`
   background-color: rgba(255, 0, 0, 0.3);
-  color: white;
+  color: black;
+  width: 40%;
+  opacity: 0.5;
+  box-shadow: inset 0 0 10px #000000;
 `;
 
 const H2 = styled.h2`
   font-size: 3rem;
+  font-weight: bold;
   margin: 5px 0;
 `;
 
